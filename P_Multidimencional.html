@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Pobreza Multidimensional</title>
+    <link rel="stylesheet" href="stylesM.css">
+</head>
+<body>
+  <h1>Diagnostico de Pobreza 1</h1>
+  
+  <!-- Dimensión 1: Analfabetismo -->
+  <form id="analfabetismoForm">
+      <label for="leerEscribir">¿Sabe leer y escribir?</label><br>
+      <input type="radio" id="si" name="leerEscribir" value="0">
+      <label for="si">Sí</label><br>
+      <input type="radio" id="no" name="leerEscribir" value="1">
+      <label for="no">No</label><br><br>
+  </form>
+
+  <!--Dimensión 2: Asistencia Escolar (Nivel Educativo) -->
+  <form id="asistenciaEscolarForm">
+      <label for="nivelEducativo">¿Cuál es el nivel educativo más alto alcanzado por usted?</label><br>
+
+      <input type="radio" id="primariaCompleta" name="nivelEducativo" value="1">
+      <label for="primariaCompleta">Educación primaria completa</label><br>
+
+      <input type="radio" id="primariaIncompleta" name="nivelEducativo" value="1">
+      <label for="primariaIncompleta">Educación primaria incompleta</label><br>
+
+      <input type="radio" id="secundariaIncompleta" name="nivelEducativo" value="1">
+      <label for="secundariaIncompleta">Educación secundaria incompleta</label><br>
+
+      <input type="radio" id="posgradoCompleta" name="nivelEducativo" value="0">
+      <label for="posgradoCompleta">Educación posgrado completa</label><br>
+
+      <input type="radio" id="posgradoincompleto" name="nivelEducativo" value="0">
+      <label for="posgradoincompleto">Educación posgrado incompleta</label><br>
+
+      <input type="radio" id="segundariacompleta" name="nivelEducativo" value="0">
+      <label for="segundariacompleta">Educación secundaria completa</label><br>
+
+      <input type="radio" id="profesionalcompleta" name="nivelEducativo" value="0">
+      <label for="profesionalcompleta">Educación técnica o profesional completa</label><br>
+
+      <input type="radio" id="profesionalincompleta" name="nivelEducativo" value="0">
+      <label for="profesionalincompleta">Educación técnica o profesional incompleta</label><br>
+
+      <input type="radio" id="universitariacompleta" name="nivelEducativo" value="0">
+      <label for="universitariacompleta">Educación universitaria completa</label><br>
+
+      <input type="radio" id="universitariaincompleta" name="nivelEducativo" value="0">
+      <label for="universitariaincompleta">Educación universitaria incompleta</label><br>
+
+      
+      <br>
+  </form>
+
+  <!-- Dimensión 3:Asistencia Escolar (Hijos) -->
+  <form id="asistenciaEscolarHijosForm">
+      <label for="asistenEscuela">¿Sus hijos asisten regularmente a la escuela?</label><br>
+      <input type="radio" id="siHijos" name="asistenEscuela" value="0">
+      <label for="siHijos">Sí</label><br>
+      <input type="radio" id="noHijos" name="asistenEscuela" value="1">
+      <label for="noHijos">No</label><br><br>
+  </form>
+
+   <!-- Dimensión 4: Rezago Escolar -->
+  
+  <form id="rezagoEscolarForm">
+      <label for="nivelRezago">En caso de haber experimentado rezago escolar, ¿en qué nivel educativo ocurrió principalmente?</label><br>
+      <input type="radio" id="educacionBasica" name="nivelRezago" value="1">
+      <label for="educacionBasica">Educación básica (6, 7 y 8)</label><br>
+      <input type="radio" id="educacionMedia" name="nivelRezago" value="1">
+      <label for="educacionMedia">Educación media (9, 10 y 11)</label><br>
+      <input type="radio" id="educacionPreescolar" name="nivelRezago" value="1">
+      <label for="educacionPreescolar">Educación preescolar</label><br>
+      <input type="radio" id="sinRezago" name="nivelRezago" value="0">
+      <label for="sinRezago">No presentó ningún rezago</label><br><br>
+  </form>
+
+  <!-- Dimension 5: Acceso a Servicios para el Cuidado de la Primera Infancia -->
+  
+  <form id="accesoServiciosForm">
+      <p>a. ¿Dónde o con quién permanece su hijo/a entre 0 y 5 años durante la mayor parte del tiempo entre semana?</p>
+      <input type="radio" id="parienteMenor" name="dim5a" value="1">
+      <label for="parienteMenor">Al cuidado de un/a pariente menor de 18 años</label><br>
+
+      <input type="radio" id="casaSolo" name="dim5a" value="1">
+      <label for="casaSolo">En casa solo</label><br>
+
+      <input type="radio" id="parienteMayor" name="dim5a" value="0">
+      <label for="parienteMayor">Al cuidado de un/a pariente de 18 años o más</label><br>
+
+      <input type="radio" id="conpadresT" name="dim5a" value="0">
+      <label for="conpadres">Con su padre o madre en el trabajo</label><br>
+
+      <input type="radio" id="conpadresC" name="dim5a" value="0">
+      <label for="conpadresC">Con su padre o madre en la casa</label><br>
+
+      <input type="radio" id="nana" name="dim5a" value="0">
+      <label for="nana">Cuidador/a o niñera contratada</label><br>
+
+      <input type="radio" id="guarderia" name="dim5a" value="0">
+      <label for="guarderia">Guardería o centro de cuidado infantil</label><br>
+      
+
+      <p>b. ¿Recibe o toma su hijo/a desayuno o almuerzo en el lugar donde permanece la mayor parte del tiempo entre semana?</p>
+      <input type="radio" id="siDesayuno" name="dim5b" value="0">
+      <label for="siDesayuno">Sí</label><br>
+      <input type="radio" id="noDesayuno" name="dim5b" value="1">
+      <label for="noDesayuno">No</label><br>
+
+      <p>c. ¿Paga por el desayuno o almuerzo que recibe su hijo en el lugar donde permanece la mayor parte del tiempo entre semana?</p>
+      <input type="radio" id="pagaCompleto" name="dim5c" value="1">
+      <label for="pagaCompleto">Sí, completamente</label><br>
+
+      <input type="radio" id="llevahogar" name="dim5c" value="0">
+      <label for="llevahogar">No, lo llevo del hogar</label><br>
+
+      <input type="radio" id="sipaga" name="dim5c" value="0">
+      <label for="sipaga">Si; un pago simbólico</label><br>
+
+      <input type="radio" id="nopaga" name="dim5c" value="0">
+      <label for="nopaga">No</label><br>
+      
+
+      <p>d. ¿Su hijo/a entre 0 y 5 años, cuenta con seguro médico o afiliación a un sistema de salud?</p>
+      <input type="radio" id="siSeguro" name="dim5d" value="0">
+      <label for="siSeguro">Sí</label><br>
+      <input type="radio" id="noSeguro" name="dim5d" value="1">
+      <label for="noSeguro">No</label><br><br>
+  </form>
+
+  <!-- Dimension 6: Trabajo Infantil -->
+  
+  <form id="trabajoInfantilForm">
+      <label for="trabajoInfantil">¿En su hogar, hay algún miembro entre los 12 y 17 años que trabaja actualmente?</label><br>
+      <input type="radio" id="siTrabajoInfantil" name="trabajoInfantil" value="1">
+      <label for="siTrabajoInfantil">Sí</label><br>
+      <input type="radio" id="noTrabajoInfantil" name="trabajoInfantil" value="0">
+      <label for="noTrabajoInfantil">No</label><br><br>
+  </form>
+
+   <!-- Dimension 7: Ocupación Informal -->
+   
+   <form id="ocupacionInformalForm">
+    <form id="ocupacionInformalForm">
+        <p>a. Número de personas del hogar que laboran</p>
+        <select id="numPersonasLaboran" name="numPersonasLaboran">
+            <option value="0">Ninguna</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 o más</option>
+        </select><br><br>
+ 
+        <p>b. De las personas empleadas en su hogar, ¿cuántas están afiliadas a un fondo de pensiones?</p>
+        <select id="numPersonasPension" name="numPersonasPension">
+            <option value="0">Ninguna</option>   
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 o más</option>
+        </select><br><br>
+
+       <p>c. ¿La empresa realiza los aportes a su fondo pensión?</p>
+       <input type="radio" id="siAportesEmpresa" name="aportesEmpresa" value="0">
+       <label for="siAportesEmpresa">Sí</label><br>
+       <input type="radio" id="noAportesEmpresa" name="aportesEmpresa" value="1">
+       <label for="noAportesEmpresa">No</label><br><br>
+
+       <p>d. ¿Realiza aportes a un fondo de Pensión?</p>
+       <input type="radio" id="aportesRegulares" name="aportesFondoPension" value="0">
+       <label for="aportesRegulares">Sí, siempre he realizado aportes regulares</label><br>
+       <input type="radio" id="aportesIrregulares" name="aportesFondoPension" value="1">
+       <label for="aportesIrregulares">A veces he realizado aportes regulares, pero no de manera constante</label><br>
+       <input type="radio" id="noAportes" name="aportesFondoPension" value="1">
+       <label for="noAportes">No realizo aportes</label><br><br>
+   </form>
+
+   <!-- Dimension 8: Desempleo de larga duración -->
+  
+  <form id="desempleoLargaDuracionForm">
+      <label for="tiempoBuscandoEmpleo">Tiempo buscando empleo:</label><br>
+      <select id="tiempoBuscandoEmpleo" name="tiempoBuscandoEmpleo">
+          <option value="1">Más de 12 meses</option>
+          <option value="0">Entre 3 y 6 meses</option>
+          <option value="0">Entre 6 y 12 meses</option>
+          <option value="0">Menos de 3 meses</option>
+          <option value="0">Menos de 1 mes</option>
+      </select><br><br>
+  </form>
+
+  <!-- Dimensión 9:Aseguramiento en salud -->
+  <form id="aseguramientoSaludForm">
+      <label for="aseguramientoSalud">¿Alguien en su hogar mayor de cinco años no cuenta con aseguramiento en el servicio de salud?</label><br>
+      <input type="radio" id="aseguramientoSaludSi" name="aseguramientoSalud" value="1">
+      <label for="aseguramientoSaludSi">Sí</label><br>
+      <input type="radio" id="aseguramientoSaludNo" name="aseguramientoSalud" value="0">
+      <label for="aseguramientoSaludNo">No</label><br><br>
+  </form>
+
+  <!-- Dimension 10: Acceso a servicio de salud dada una necesidad -->
+  
+  <form id="accesoSaludNecesidadForm">
+      <label for="problemaSalud">¿Alguien en su hogar ha presentado algún problema de salud en los últimos meses?</label><br>
+      <input type="radio" id="problemaSaludSi" name="problemaSalud" value="1">
+      <label for="problemaSaludSi">Sí</label><br>
+      <input type="radio" id="problemaSaludNo" name="problemaSalud" value="0">
+      <label for="problemaSaludNo">No</label><br><br>
+
+      <label for="acudioMedico">¿Acudió a un médico general, especialista, odontólogo, terapista o institución de salud?</label><br>
+      <input type="radio" id="acudioMedicoSi" name="acudioMedico" value="0">
+      <label for="acudioMedicoSi">Sí</label><br>
+      <input type="radio" id="acudioMedicoNo" name="acudioMedico" value="1">
+      <label for="acudioMedicoNo">No</label><br><br>
+  </form>
+
+  <!-- Dimension 11: Acceso a fuente de agua mejorada -->
+
+<form id="accesoAguaMejoradaForm">
+  <label for="accesoAguaMejorada">¿Tiene acceso a agua potable en su hogar?</label><br>
+  <input type="radio" id="accesoAguaMejoradaSi" name="accesoAguaMejorada" value="0">
+  <label for="accesoAguaMejoradaSi">Sí</label><br>
+  <input type="radio" id="accesoAguaMejoradaNo" name="accesoAguaMejorada" value="1">
+  <label for="accesoAguaMejoradaNo">No</label><br><br>
+</form>
+
+<!-- Dimension 12: Eliminación de excretas -->
+
+<form id="eliminacionExcretasForm">
+  <label for="alcantarillado">¿Tiene acceso al servicio de alcantarillado en su hogar?</label><br>
+  <input type="radio" id="alcantarilladoSi" name="alcantarillado" value="0">
+  <label for="alcantarilladoSi">Sí</label><br>
+  <input type="radio" id="alcantarilladoNo" name="alcantarillado" value="1">
+  <label for="alcantarilladoNo">No</label><br><br>
+</form>
+
+<!-- Dimension 13: Hacinamiento crítico -->
+
+<form id="hacinamientoCriticoForm">
+  <label for="hacinamiento">¿Cuántas personas comparten una misma habitación en su hogar?</label><br>
+  <input type="radio" id="hacinamientoTresOMas" name="hacinamiento" value="1">
+  <label for="hacinamientoTresOMas">3 o más</label><br>
+  <input type="radio" id="hacinamientoMenosDeTres" name="hacinamiento" value="0">
+  <label for="hacinamientoMenosDeTres">Menos de 3</label><br><br>
+</form>
+
+<!-- Dimension 14: Pisos inadecuados -->
+
+<form id="pisosInadecuadosForm">
+  <label for="materialPisos">¿El material de los pisos de su vivienda es en tierra?</label><br>
+  <input type="radio" id="pisosInadecuadosSi" name="materialPisos" value="1">
+  <label for="pisosInadecuadosSi">Sí</label><br>
+  <input type="radio" id="pisosInadecuadosNo" name="materialPisos" value="0">
+  <label for="pisosInadecuadosNo">No</label><br><br>
+</form>
+
+<!-- Dimension 15: Paredes exteriores inadecuadas -->
+
+<form id="paredesInadecuadasForm">
+  <label for="materialParedes">¿El material de las paredes exteriores de su vivienda es inadecuado?</label><br>
+  <input type="radio" id="paredesInadecuadasSi" name="materialParedes" value="1">
+  <label for="paredesInadecuadasSi">Sí</label><br>
+  <input type="radio" id="paredesInadecuadasNo" name="materialParedes" value="0">
+  <label for="paredesInadecuadasNo">No</label><br><br>
+</form>
+
+
+    <button onclick="calcularPuntaje()">Continuar</button>
+    <script src="scriptM.js">
+        
+    </script>
+
+    
+</body>
+</html>

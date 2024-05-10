@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuestionario de Pobreza Oculta</title>
+  <link rel="stylesheet" href="stylesO.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Diagnostico de Pobreza 2</h2>
+    <form id="pobreza-form">
+      <!-- Subdimensión 1: Ingresos monetarios -->
+      
+      <div>
+        <label for="salarioMinimo">Valor del Salario Mínimo Actual:</label>
+        <input type="text" id="salarioMinimo" required placeholder="Ingrese el valor del salario mínimo actual">
+      </div>
+      <div>
+        <br>
+        <label for="ingresoMensual">Ingresos promedio mensual total de este hogar? (Sumados los ingresos de todos los miembros del hogar)  valor en pesos. </label>
+        <input type="text" id="ingresoMensual" required placeholder="Ingrese el ingreso mensual promedio">
+      </div>
+      <div>
+        <br>
+        <label for="numPersonas">¿Cuántas personas dependen de estos ingresos en su hogar, incluyéndose a usted?</label>
+        <input type="text" id="numPersonas" required placeholder="Ingrese el número de personas dependientes">
+      </div>
+      <br>
+
+      <!-- Subdimensión 2: Persona mayor sin fuente de ingresos -->
+      <label>
+        <p>¿Hay alguna persona mayor de 60 años que genere ingresos regulares en su hogar?</p>
+        <select name="fuenteIngresos" required>
+          <option value="">Seleccione</option>
+          <option value="1">No</option>
+          <option value="0">Sí</option>
+        </select>
+      </label>
+    
+      <!-- Subdimensión 3: Calidad del empleo -->
+      
+      <label>
+        <p>¿Esta usted desempleado?</p>
+        <select name="calidadEmpleo" required onchange="mostrarPreguntasCalidadEmpleo(this)">
+          <option value="">Seleccione</option>
+          <option value="0">No</option>
+          <option value="1">Sí</option>
+        </select>
+      </label>
+    
+      <!-- Preguntas adicionales para calidad del empleo -->
+      <div id="preguntas-calidad-empleo" style="display: none;">
+        <!-- Preguntas si la calidad del empleo es "Sí" -->
+        <div id="preguntas-si-calidad-empleo" style="display: none;">
+          <label>
+            <p>Aportes a un fondo de Pensión trabajadores por cuenta propia o independientes</p>
+            <select name="preguntaA">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>Aportes a una Entidad Promotora de Salud (EPS) trabajadores por cuenta propia o independientes</p>
+            <select name="preguntaB">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>Aportes a una Administradora de Riesgos Laborales (ARL) trabajadores por cuenta propia o independientes</p>
+            <select name="preguntaC">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>Aportes a una Caja de Compensación Familiar trabajadores por cuenta propia o independientes</p>
+            <select name="preguntaD">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿Cuál es su nivel de ingresos mensuales aproximado percibido por el empleo actual?</p>
+            <select name="preguntaE">
+              <option value="">Seleccione</option>
+              <option value="0">mayor o igual a 1 salario mínimo</option>
+              <option value="1">Menos de 1 salario mínimo</option>
+            </select>
+          </label>
+        </div>
+        
+        <!-- Preguntas si la calidad del empleo es "No" -->
+        <div id="preguntas-no-calidad-empleo" style="display: none;">
+          <label>
+            <p>¿La empresa realiza los aportes a su EPS?</p>
+            <select name="preguntaF">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+          
+          <label>
+            <p>¿La empresa realiza los aportes a la Administradora de Riesgos Laborales?</p>
+            <select name="preguntaG">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa realiza los aportes a su fondo pensión?</p>
+            <select name="preguntaH">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa realiza los aportes a su caja de compensación familiar?</p>
+            <select name="preguntaI">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa donde labora le paga prima de servicios?</p>
+            <select name="preguntaJ">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa donde labora le paga cesantías?</p>
+            <select name="preguntaK">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa donde labora le paga intereses a las cesantías?</p>
+            <select name="preguntaL">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿La empresa donde labora le paga las vacaciones?</p>
+            <select name="preguntaM">
+              <option value="">Seleccione</option>
+              <option value="1">No</option>
+              <option value="0">Sí</option>
+            </select>
+          </label>
+
+          <label>
+            <p>¿Cuál es su nivel de ingresos mensuales aproximado percibido por el empleo actual?</p>
+            <select name="preguntaN">
+              <option value="">Seleccione</option>
+              <option value="0">mayor o igual a 1 salario mínimo</option>
+              <option value="1">Menos de 1 salario mínimo</option>
+            </select>
+          </label>
+
+        </div>
+      </div>
+      
+
+      
+      <!-- Subdimensión 4: Cuidado otras personas del hogar -->
+      
+      <label>
+        <p>¿Hay alguna persona en su hogar que no está empleada debido a que asume responsabilidades de cuidado de personas del hogar con discapacidad, personas mayores o niños, niñas y adolescentes?</p>
+        <select name="cuidadoPersonas" required>
+          <option value="">Seleccione</option>
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </label>
+     
+
+
+      <!-- Subdimensión 5: Planificación financiera y ahorros -->
+      
+      <label>
+        <p>¿Cuál es el nivel de ingresos promedio mensual total de este hogar? (Sumados los ingresos de todos los miembros del hogar) Registre el valor en pesos </p>
+        <input type="text" name="ingresos2" required placeholder="Ingrese el ingreso mensual promedio">
+      </label>
+      <label>
+        <p>¿Cuenta con ahorros, cuentas bancarias o algún tipo de reserva financiera ?</p>
+        <select name="planificacionAhorros" required>
+          <option value="">Seleccione</option>
+          <option value="0">Sí</option>
+          <option value="1">No</option>
+        </select>
+      </label>
+
+
+      <!-- Subdimensión 6: Inseguridad alimentaria -->
+     <label>
+        <p>¿Considera que tiene acceso a alimentos suficientes para cubrir las necesidades nutricionales de su hogar?</p>
+        <select name="inseguridadAlimentaria" required onchange="mostrarPreguntasInseguridadAlimentaria(this)">
+          <option value="">Seleccione</option>
+          <option value="0">Sí</option>
+          <option value="1">No</option>
+        </select>
+      </label>
+      <!-- Preguntas adicionales para inseguridad alimentaria -->
+      <div id="preguntas-inseguridad-alimentaria" style="display: none;">
+        <label>
+          <p>¿Usted o algún miembro de su hogar ha experimentado inseguridad alimentaria en los últimos 12 meses? (es decir, incertidumbre sobre la disponibilidad de alimentos)</p>
+          <select name="pregunta_A">
+            <option value="">Seleccione</option>
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </label>
+        
+        <label>
+          <p>¿Con qué frecuencia experimenta dificultades para acceder a alimentos suficientes para usted y su familia?</p>
+          <select name="pregunta_B">
+            <option value="">Seleccione</option>
+            <option value="1">Actualmente</option>
+            <option value="1">Frecuentemente</option>
+            <option value="0">Rarar vez</option>
+            <option value="0">Ocasionalmente</option>
+
+          </select>
+        </label>
+
+        <label>
+          <p>¿Podría indicar las razones por las que enfrentó o enfrenta inseguridad alimentaria?</p>
+          <select name="pregunta_C">
+            <option value="">Seleccione</option>
+            <option value="1">Crisis económicas y altos precios de los alimentos</option>
+            <option value="1">Desempleo y falta de oportunidades laborales</option>
+            <option value="1">Falta de recursos económicos</option>
+            <option value="0">FHorarios laborales, falta de tiempo y otras</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Ha tenido que reducir el tamaño de las porciones de comida?</p>
+          <select name="pregunta_D">
+            <option value="">Seleccione</option>
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Ha tenido que saltarse comidas?</p>
+          <select name="pregunta_E">
+            <option value="">Seleccione</option>
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Cuál es la frecuencia con la que tiene acceso a Frutas y verduras frescas en su hogar?</p>
+          <select name="pregunta_F">
+            <option value="">Seleccione</option>
+            <option value="1">Nunca</option>
+            <option value="1">Raramente</option>
+            <option value="0">A menudo</option>
+            <option value="0">A veces</option>
+            <option value="0">Siempre</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Cuál es la frecuencia con la que tiene acceso a Carnes y proteínas en su hogar?</p>
+          <select name="pregunta_G">
+            <option value="">Seleccione</option>
+            <option value="1">Nunca</option>
+            <option value="1">Raramente</option>
+            <option value="0">A menudo</option>
+            <option value="0">A veces</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Cuál es la frecuencia con la que tiene acceso a Cereales y granos en su hogar?</p>
+          <select name="pregunta_H">
+            <option value="">Seleccione</option>
+            <option value="1">Nunca</option>
+            <option value="1">Raramente</option>
+            <option value="0">A menudo</option>
+            <option value="0">A veces</option>
+          </select>
+        </label>
+
+        <label>
+          <p>¿Cuál es la frecuencia con la que tiene acceso a Productos lácteos en su hogar?</p>
+          <select name="pregunta_I">
+            <option value="">Seleccione</option>
+            <option value="1">Nunca</option>
+            <option value="1">Raramente</option>
+            <option value="0">A menudo</option>
+            <option value="0">A veces</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Subdimensión 7: Déficit habitacional -->
+      
+      <label>
+        <p>¿Considera que su vivienda está adecuadamente dimensionada para el número de personas que la habitan?</p>
+        <select name="personasVivienda">
+          <option value="">Seleccione</option>
+          <option value="0">Sí</option>
+          <option value="1">No</option>
+        </select>
+      </label>
+
+      <label>
+        <P>¿Cuántas personas comparten la vivienda?</P>
+        <input type="text" name="personasVivienda" required placeholder="Ingrese el número de personas que comparten la vivienda">
+      </label>
+      <label>
+        <P>¿Algún espacio de la vivienda está dedicado a negocios de industria, comercio o servicios?</P>
+        <select name="deficitHabitacional" required>
+          <option value="">Seleccione</option>
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </label>
+    
+      <!-- Botón de enviar -->
+      <button type="submit">Enviar respuestas</button>
+    </form>
+  </div>
+
+  <script src="scriptO.js"></script>
+</body>
+</html>

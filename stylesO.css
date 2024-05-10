@@ -1,0 +1,72 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1F3B72;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  
+  
+  .container {
+    width: 100%;
+    max-width: 400px; /* Limitamos el ancho máximo del contenedor para que no se extienda demasiado en pantallas grandes */
+    padding: 20px; /* Aumentamos el relleno para dar más espacio al contenido */
+    background-color: #1F3B72;
+    border-radius: 10px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2); /* Reducimos la opacidad de la sombra */
+  }
+
+  label {
+    font-weight: bold;
+    color: #1F3B72;
+    margin-bottom: 10px;
+}
+  
+  h1, h2 {
+    text-align: center;
+  }
+
+  h2{
+    color: #ffffff;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #F7D117;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Agrega transición al cambio de color de fondo */
+}
+button:hover {
+    background-color: #FFC200; /* Cambia el color de fondo al pasar el cursor */
+}
+  
+form {
+   
+  width: 100%;
+  max-width: 380px;
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  }
